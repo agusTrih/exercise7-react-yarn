@@ -43,6 +43,7 @@ function TextTransform() {
                 type="text"
                 value={text}
                 onChange={handleInput}
+                placeholder="Type here.."
             ></InputStyle>
             <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
             <ParagraphStyle>{afterConverter}</ParagraphStyle>

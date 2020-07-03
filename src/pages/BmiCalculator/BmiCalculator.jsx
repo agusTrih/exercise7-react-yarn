@@ -1,13 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Styled from "styled-components";
 
-const FormStyle = Styled.form`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-margin-top: 100px
-`;
 const InputStyle = Styled.input`
 padding: 10px;
 `;
@@ -21,7 +14,53 @@ color: blue;
 `;
 
 function BmiCalculator() {
-    return <div></div>;
+    const [height, setHeight] = useState("");
+    const [weight, setWeight] = useState("");
+    const [afterConverter, setAfterConverter] = useState("");
+
+    const handleInput1 = (event) => {
+        setHeight(event.target.value);
+    };
+    const handleInput2 = (event) => {
+        setWeight(event.target.value);
+    };
+    const handleClick = (e) => {
+        e.preventDefault();
+        setAfterConverter(bmiFunction(height, weight));
+    };
+
+    function bmiFunction(height, weight) {
+        const result = weight / (height / 100) ** 2;
+
+        if (result < 17) {
+            return `To Skinny`;
+        } else if (result >= 17 && result <= 18.4) {
+            return `Skinny`;
+        } else if (result >= 18.5 && result <= 25) {
+            return `Normal`;
+        } else if (result >= 25.1 && result <= 27) {
+            return `Fat`;
+        } else {
+            return `Too Fat`;
+        }
+    }
+
+    return (
+        <div>
+            <InputStyle
+                type="number"
+                value={height}
+                onChange={handleInput1}
+            ></InputStyle>
+            <InputStyle
+                type="number"
+                value={weight}
+                onChange={handleInput2}
+            ></InputStyle>
+            <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
+            <ParagraphStyle>{afterConverter}</ParagraphStyle>
+        </div>
+    );
 }
 
 export default BmiCalculator;

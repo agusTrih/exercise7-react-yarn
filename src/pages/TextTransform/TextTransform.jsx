@@ -47,7 +47,7 @@ function TextTransform() {
 
     return (
         <div>
-            <FormStyle>
+            <FormStyle as="div">
                 <InputStyle
                     type="text"
                     value={text}

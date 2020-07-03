@@ -33,7 +33,7 @@ function CatsAge() {
     };
     function agePlus(cat) {
         const after2Age = (cat - 2) * 4 + 24;
-        if (cat == 1) {
+        if (cat === "1") {
             return `Kucing yang berusia 1 tahun, sebenarnya memiliki tubuh yang berusia 15 tahun dalam umur manusia`;
         } else if (cat === 2) {
             return `Kucing yang berusia 1 tahun, sebenarnya memiliki tubuh yang berusia 24 tahun dalam umur manusia`;

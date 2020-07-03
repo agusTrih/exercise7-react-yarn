@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import "./App.css";
+import CatsAge from "./pages/CatsAge/CatsAge";
+import TextTransform from "./pages/TextTransform/TextTransform";
+import BmiCalculator from "./pages/BmiCalculator/BmiCalculator";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <CatsAge />
+            <TextTransform />
+            <BmiCalculator />
+        </div>
+    );
 }
 
 export default App;

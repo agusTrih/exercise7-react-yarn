@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import Styled from "styled-components";
 
 // line di bawah adalah Styled-componen
-
+const FormStyle = Styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 100px
+`;
 const InputStyle = Styled.input`
 padding: 10px;
 `;
@@ -37,14 +43,16 @@ function CatsAge() {
     }
     return (
         <div>
-            <InputStyle
-                type="number"
-                value={ageCat}
-                onChange={handleInput}
-                placeholder="Input Here.."
-            ></InputStyle>
-            <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
-            <ParagraphStyle>{afterConverter}</ParagraphStyle>
+            <FormStyle>
+                <InputStyle
+                    type="number"
+                    value={ageCat}
+                    onChange={handleInput}
+                    placeholder="Input Here.."
+                ></InputStyle>
+                <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
+                <ParagraphStyle>{afterConverter}</ParagraphStyle>
+            </FormStyle>
         </div>
     );
 }

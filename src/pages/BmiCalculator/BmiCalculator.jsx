@@ -33,15 +33,15 @@ function BmiCalculator() {
         const result = weight / (height / 100) ** 2;
 
         if (result < 17) {
-            return `To Skinny`;
+            return `Kurus, Kekurangan banyak berat badan`;
         } else if (result >= 17 && result <= 18.4) {
-            return `Skinny`;
+            return `Kurus, Kekurangan sedikit berat badan`;
         } else if (result >= 18.5 && result <= 25) {
-            return `Normal`;
+            return `Hore berat badan kamu Normal`;
         } else if (result >= 25.1 && result <= 27) {
-            return `Fat`;
-        } else {
-            return `Too Fat`;
+            return `Gemuk, Kelebihan berat badan`;
+        } else if (result > 27) {
+            return `Gemuk, Kelebihan banyak berat badan`;
         }
     }
 
@@ -50,11 +50,13 @@ function BmiCalculator() {
             <InputStyle
                 type="number"
                 value={height}
+                placeholder="Height"
                 onChange={handleInput1}
             ></InputStyle>
             <InputStyle
                 type="number"
                 value={weight}
+                placeholder="Weight"
                 onChange={handleInput2}
             ></InputStyle>
             <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>

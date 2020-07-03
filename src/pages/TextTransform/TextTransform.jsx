@@ -12,6 +12,14 @@ const ParagraphStyle = Styled.p`
 font-size: 24px;
 color: blue;
 `;
+const FormStyle = Styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 100px
+`;
+
 function TextTransform() {
     const [text, setText] = useState("");
     const [afterConverter, setAfterConverter] = useState("");
@@ -39,14 +47,16 @@ function TextTransform() {
 
     return (
         <div>
-            <InputStyle
-                type="text"
-                value={text}
-                onChange={handleInput}
-                placeholder="Type here.."
-            ></InputStyle>
-            <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
-            <ParagraphStyle>{afterConverter}</ParagraphStyle>
+            <FormStyle>
+                <InputStyle
+                    type="text"
+                    value={text}
+                    onChange={handleInput}
+                    placeholder="Type here.."
+                ></InputStyle>
+                <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
+                <ParagraphStyle>{afterConverter}</ParagraphStyle>
+            </FormStyle>
         </div>
     );
 }

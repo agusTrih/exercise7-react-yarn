@@ -12,6 +12,13 @@ const ParagraphStyle = Styled.p`
 font-size: 24px;
 color: blue;
 `;
+const FormStyle = Styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 100px
+`;
 
 function BmiCalculator() {
     const [height, setHeight] = useState("");
@@ -47,20 +54,22 @@ function BmiCalculator() {
 
     return (
         <div>
-            <InputStyle
-                type="number"
-                value={height}
-                placeholder="Height"
-                onChange={handleInput1}
-            ></InputStyle>
-            <InputStyle
-                type="number"
-                value={weight}
-                placeholder="Weight"
-                onChange={handleInput2}
-            ></InputStyle>
-            <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
-            <ParagraphStyle>{afterConverter}</ParagraphStyle>
+            <FormStyle>
+                <InputStyle
+                    type="number"
+                    value={height}
+                    placeholder="Height"
+                    onChange={handleInput1}
+                ></InputStyle>
+                <InputStyle
+                    type="number"
+                    value={weight}
+                    placeholder="Weight"
+                    onChange={handleInput2}
+                ></InputStyle>
+                <ButtonStyle onClick={handleClick}>Click Me</ButtonStyle>
+                <ParagraphStyle>{afterConverter}</ParagraphStyle>
+            </FormStyle>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
+import Tittle from "../../components/Tittle/Tittle";
 
 const FormStyle = Styled.form`
 display: flex;
@@ -56,6 +57,7 @@ function BmiCalculator() {
     return (
         <div>
             <FormStyle>
+                <Tittle text="Bmi Calculator" />
                 <InputStyle
                     type="number"
                     value={height}

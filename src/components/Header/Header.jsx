@@ -12,6 +12,7 @@ const NavStyle = Styled.nav`
 padding:10px;
 margin: 10px;
 color: blue;
+
 `;
 
 function Header() {

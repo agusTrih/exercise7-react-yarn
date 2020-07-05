@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
+import Tittle from "../../components/Tittle/Tittle";
 
 const InputStyle = Styled.input`
 padding: 10px;
@@ -7,6 +8,13 @@ padding: 10px;
 const ButtonStyle = Styled.button`
 padding: 10px;
 background-color: blue;
+margin-top: 5px;
+
+&:hover {
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
 `;
 const ParagraphStyle = Styled.p`
 font-size: 24px;
@@ -48,6 +56,7 @@ function TextTransform() {
     return (
         <div>
             <FormStyle as="div">
+                <Tittle text="Text Transform" />
                 <InputStyle
                     type="text"
                     value={text}

@@ -16,6 +16,13 @@ background-color
 const ButtonStyle = Styled.button`
 padding: 10px;
 background-color: blue;
+margin-top: 5px;
+
+&:hover {
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
 `;
 const ParagraphStyle = Styled.p`
 font-size: 24px;

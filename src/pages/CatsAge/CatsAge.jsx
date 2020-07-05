@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styled from "styled-components";
+import Tittle from "../../components/Tittle/Tittle";
 
 // line di bawah adalah Styled-componen
 const FormStyle = Styled.form`
@@ -15,6 +16,13 @@ padding: 10px;
 const ButtonStyle = Styled.button`
 padding: 10px;
 background-color: blue;
+margin-top: 5px;
+
+&:hover {
+    background-color: red;
+    cursor: pointer;
+    color: white;
+}
 `;
 const ParagraphStyle = Styled.p`
 font-size: 24px;
@@ -44,6 +52,7 @@ function CatsAge() {
     return (
         <div>
             <FormStyle>
+                <Tittle text="Cats Age" />
                 <InputStyle
                     type="number"
                     value={ageCat}
